@@ -5,35 +5,30 @@
     <meta charset="UTF-8" />
     <title ng-bind="Page.title()">CFDA</title>
     
+    <link rel="stylesheet" href="/lib/uswds/css/uswds.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.css" />
     <!-- main:css -->
     <!-- endinject -->
-    <!-- vendor:js -->
-    <!-- endinject -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3-angular/1.3.1/c3-angular.min.js"></script>
 
 </head>
 <body>
-
-    <header class="header theme-iae" role="banner">
-        header
-    </header>
-
- 
-    <div id="main" class="theme" ui-view aria-live="polite" role="main">
-        <div ng-controller="HelloWorldController">
-            <h1>{{greeting}}</h1>
-            <div ng-show="bool" class="fade">
-              Show and hide me
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a ui-sref="home" ui-sref-active="active"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a ui-sref="about" ui-sref-active="active"><i class="fa fa-home"></i> About</a></li>
+                </ul>
             </div>
-            <button ng-click="bool=!bool">Toggle</button>
-
-        </div>
+        </nav>
+    </header>
+    <div id="main" class="usa-grid" ui-view aria-live="polite" role="main">
     </div>
-
-    <footer class="footer theme-iae">
-        footer
-    </footer>
 
     <!-- main:js -->
     <!-- endinject -->

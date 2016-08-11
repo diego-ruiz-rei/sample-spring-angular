@@ -9,6 +9,10 @@ var templateCache = require('gulp-angular-templatecache');
 var appFilesBase = 'src/main/webapp/app';
 var index;
 
+gulp.task('assets', function() {
+    gulp.src('src/main/webapp/assets/**/*.*')
+        .pipe(gulp.dest('target/classes/static'));
+});
 
 gulp.task('index', function() {
     index = gulp.src('src/main/webapp/assets/index.html')
@@ -18,7 +22,7 @@ gulp.task('index', function() {
 gulp.task('default', ['package'], function () {
 });
 
-gulp.task('package', ['main'], function() {
+gulp.task('package', ['assets','main'], function() {
 });
 
 //Watch task
