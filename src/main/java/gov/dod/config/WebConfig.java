@@ -15,6 +15,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     static class Routes {
         @RequestMapping({
                 "/about",
+                "/error",
 
         })
         public String index() {

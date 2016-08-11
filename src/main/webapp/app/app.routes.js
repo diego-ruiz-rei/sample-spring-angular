@@ -5,7 +5,7 @@
         function ($locationProvider, $stateProvider, $urlRouterProvider) {
             $locationProvider.html5Mode({
                 enabled: true,
-                requireBase: false
+                requireBase: true
             });
             $stateProvider
                 .state('home', {

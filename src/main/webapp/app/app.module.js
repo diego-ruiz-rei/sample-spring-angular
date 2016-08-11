@@ -1,6 +1,7 @@
 (function(){
     "use strict";
-	angular.module('app', ['gridshore.c3js.chart','ui.router']);
+    var requiredModules = ['gridshore.c3js.chart','ui.router'];
+	angular.module('app',requiredModules);
 	angular.module('app').controller('HelloWorldController', function($scope) {
 		$scope.greeting = "Hello World!!!";
 		var chart = c3.generate({
@@ -13,8 +14,8 @@
 			}
 		});
 	});
-	angular.module('app').controller('AboutController', function($scope) {
-		
-	});
+	angular.module('app').controller('AboutController', ['$scope','$location',function($scope,$location) {
+		$scope.qs = $location.search();
+	}]);
 
 })();
